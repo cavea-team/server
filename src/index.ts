@@ -3,14 +3,14 @@ dotenv.config();
 
 import { ApolloServer } from 'apollo-server';
 import { buildFederatedSchema } from '@apollo/federation';
-import { AsoiafDataSource } from './datasources';
+import { UserDataSource } from './datasources';
 import { resolvers } from './resolvers';
 import { typeDefs } from './typeDefs';
 
 const server = new ApolloServer({
   schema: buildFederatedSchema([{ typeDefs, resolvers }]),
   dataSources: () => ({
-    asoiaf: new AsoiafDataSource()
+    user: new UserDataSource()
   }),
   formatError: error => error,
   context: ({ req, res }) => {

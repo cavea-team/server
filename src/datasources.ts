@@ -1,16 +1,11 @@
-import { RESTDataSource } from 'apollo-datasource-rest';
+import { DataSource } from 'apollo-datasource';
+import { createStore } from './utils';
+import { Sequelize } from 'sequelize/types';
 
-export class AsoiafDataSource extends RESTDataSource {
+export class UserDataSource extends DataSource {
+  store: Sequelize;
   constructor() {
     super();
-    this.baseURL = process.env.REST_API;
-  }
-
-  public async getBooks() {
-    return this.get('/books');
-  }
-
-  public async getCharacters() {
-    return this.get('/characters');
+    this.store = createStore();
   }
 }

@@ -1,7 +1,7 @@
-import { AsoiafDataSource } from './datasources';
+import { UserDataSource } from './datasources';
 
 export interface IResolverContext {
   dataSources: {
-    asoiaf: AsoiafDataSource;
+    user: UserDataSource;
   };
 }
