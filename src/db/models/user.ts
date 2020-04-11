@@ -6,6 +6,10 @@ const sequelize = createStore();
 export class User extends Model {
   public id!: number;
   public name!: string;
+  public email!: string;
+  public password!: string;
+  public phone!: string;
+  public username!: string;
 
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;

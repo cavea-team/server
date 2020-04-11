@@ -32,6 +32,3 @@ export function up(queryInterface: any, Sequelize: any) {
     }
   });
 }
-export function down(queryInterface: any, Sequelize: any) {
-  return queryInterface.dropTable('Users');
-}
