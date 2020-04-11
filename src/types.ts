@@ -1,7 +1,7 @@
-import { UserDataSource } from './datasources';
+import { UserModelStatic } from './db/models/user';
 
 export interface IResolverContext {
-  dataSources: {
-    user: UserDataSource;
+  models: {
+    User: UserModelStatic;
   };
 }

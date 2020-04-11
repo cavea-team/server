@@ -1,19 +1,30 @@
 import { gql } from 'apollo-server';
 
 export const typeDefs = gql`
-  extend type Query {
-    getBooks: [Book]
-    getCharacters: [Character]
+  extend type Mutation {
+    user: UserMutations
   }
-  type Book {
-    name: String
-    publisher: String
-    released: String
+  type Status {
+    status: Boolean
+    message: String
   }
-  type Character {
+  type UserMutations {
+    register(
+      name: String
+      email: String
+      password: String
+      phone: String
+      username: String
+    ): UserResponse
+  }
+  type UserResponse {
+    status: Status
+    data: User
+  }
+  type User {
     name: String
-    culture: String
-    born: String
-    gender: String
+    email: String
+    phone: String
+    username: String
   }
 `;

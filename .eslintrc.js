@@ -2,6 +2,7 @@ module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
+  ignorePatterns: ['db/', 'node_modules/'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
