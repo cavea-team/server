@@ -1,7 +1,7 @@
-import { AsoiafDataSource } from './datasources';
+import { UserModelStatic } from './db/models/user';
 
 export interface IResolverContext {
-  dataSources: {
-    asoiaf: AsoiafDataSource;
+  models: {
+    User: UserModelStatic;
   };
 }
