@@ -5,7 +5,7 @@
   "scripts": {
     "start-dev": "nodemon --watch src/ src/index.ts",
     "start": "node dist/index.js",
-    "build": "rm -rf dist && tsc",
+    "build": "rm -rf dist && tsc && npx sequelize-cli db:migrate",
     "test": "jest --verbose",
     "lint": "eslint src/**/*.{js,ts,tsx} --no-error-on-unmatched-pattern --quiet --fix",
     "prettier": "prettier --write src/**/*.{js,ts,tsx}"
